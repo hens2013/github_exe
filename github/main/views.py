@@ -8,9 +8,7 @@ def index(request):
     if request.method == 'POST':
         # Process the webhook payload
         payload = request.POST
-        print('-' * 100)
-        print(payload)
-        print('-' * 100)
+
         # Extract pull request details from the payload
         title = payload['pull_request']['title']
         url = payload['pull_request']['url']
@@ -22,4 +20,5 @@ def index(request):
         return HttpResponse('Webhook received and processed successfully.')
     else:
         # Return a 405 Method Not Allowed response for other HTTP methods
-        return HttpResponse(status=405)
+        return HttpResponse("tech with team")
+
